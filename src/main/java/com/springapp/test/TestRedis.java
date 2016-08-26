@@ -55,13 +55,13 @@ public class TestRedis {
         map.put(user1.getId(),user1);
 
         User user2 = new User();
-        user2.setId("z1");
+        user2.setId("z2");
         user2.setName("周振江");
         user2.setAge("19");
         map.put(user2.getId(),user2);
 
         User user3 = new User();
-        user3.setId("z1");
+        user3.setId("z3");
         user3.setName("周振江");
         user3.setAge("19");
         map.put(user3.getId(),user3);

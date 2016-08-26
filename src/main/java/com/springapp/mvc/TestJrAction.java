@@ -66,7 +66,7 @@ public class TestJrAction {
                 .append("&holderMobile=" + holderMobile)
                 .append("&expires="+expires)
                 .append("&requestTime="+requestTime)
-                .append("&jump=xjk")
+//                .append("&jump=xjk")
                 .append("&returnUrl=" + returnUrl);
 
 
