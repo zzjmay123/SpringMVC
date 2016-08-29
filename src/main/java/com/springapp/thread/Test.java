@@ -8,9 +8,9 @@ import com.springapp.redis.User;
 public class Test {
 
     public static void main(String[] args) {
-        Test test = new Test();
+//        Test test = new Test();
 
-        System.out.println("测试结果 t="+test.testUser().getName());
+//        System.out.println("测试结果 t="+test.testUser().getName());
 
     }
 

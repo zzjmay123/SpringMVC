@@ -1,0 +1,9 @@
+#####################eclipse/idea ignore add by wangchunyang ############
+*.settings/
+*.classpath
+*.project
+*.iml
+*.idea
+*.svn
+/*/*/target/
+/*/*/bin/
