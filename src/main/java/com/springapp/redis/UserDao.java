@@ -10,29 +10,4 @@ import java.util.Map;
  */
 public interface UserDao {
 
-    /**
-     * 保存User
-     * @param user
-     */
-     void saveUser(User user);
-
-    /**
-     * 批量存入值
-     * @param userMap
-     */
-     void saveMultiUsers(Map<String,User> userMap);
-
-    /**
-     * 获取userName
-     */
-     String getUserName(String id);
-
-    /**
-     * 获取User
-     * @param id
-     * @return
-     */
-    User getUser(String id);
-
-    List<Serializable> getMultiUsers(Collection<Serializable> keys);
 }

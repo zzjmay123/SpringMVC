@@ -21,34 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class UserDaoImpl implements UserDao {
 
 
-    @Resource
-    protected  RedisTemplate<Serializable,Serializable> redisTemplate;
-
-    @Override
-    public void saveUser(User user) {
-        //简单的字符串级别的set方法,设置超时时间
-        redisTemplate.opsForValue().set(user.getId(),user, Constant.REDIS_EXPIRETIME, TimeUnit.MINUTES);
-    }
-
-    @Override
-    public void saveMultiUsers(Map<String, User> userMap) {
-        redisTemplate.opsForValue().multiSet(userMap);
-    }
-
-    @Override
-    public String getUserName(String id) {
-        return (String) redisTemplate.opsForValue().get(id);
-    }
-
-    @Override
-    public User getUser(String id) {
-        return (User) redisTemplate.opsForValue().get(id);
-    }
-
-    @Override
-    public List<Serializable> getMultiUsers(Collection<Serializable> keys) {
-        return redisTemplate.opsForValue().multiGet(keys);
-    }
 
 
 }
