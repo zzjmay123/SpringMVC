@@ -43,7 +43,6 @@ public class BinarySearchTree {
     /**
      * 判断当前是否存在  递归的方式
      * @param element
-     * @param note
      * @return
      */
     public boolean contains(Name element,Node root){

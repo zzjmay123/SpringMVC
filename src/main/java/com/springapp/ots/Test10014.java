@@ -1,26 +1,31 @@
-package com.springapp.mvc;
+package com.springapp.ots;
 
 import com.jd.jr.order.export.rest.domain.OrderBean;
 import com.jd.jr.order.export.rest.domain.OrderInfoBean;
 import com.jd.jr.order.export.rest.domain.cashier.CashierOrderInfoBean;
 import com.jd.payment.paycommon.utils.GsonUtils;
+import com.springapp.mvc.CashierParam;
+import com.springapp.mvc.DictionarySortSign;
+import com.springapp.mvc.SecurityUtils;
+
 
 /**
- * Created by zhouzhenjiang on 2016/7/26.
+ * Created by chenqi5 on 2015/10/10.
+ * 
+ * 测试总代分销--线下汇款
+ * 
  */
-public class TestCommonAction {
-
-    public static void main(String ss[]) {
-        String orderId = "15648948948";
-        String toType = "200";
-        String orderType = "20042";
-        String total = "100";
-        String skuMerchant = "31001";
-        String productName = "光环侧刻RGB机械键盘速阿斯";
+public class Test10014 {
+    public static void main(String ss[]) throws Exception {
+        String orderId = "12491082569";
+        String toType = "30";
+        String orderType = "88";
+        String total = "11.00";
+//        String skuMerchant = "55003";
+        String productName = "京东";
         String countDownTime = "2015-9-30";
         String orderSubmitTime = "2015-9-30";
-        String expires="10";
-        String requestTime="20160628183200";
+
 
         CashierParam cashierParam = new CashierParam();
         cashierParam.setOrderId(orderId);
@@ -32,19 +37,18 @@ public class TestCommonAction {
         cashierOrderInfoBean.setOrderType(orderType);
         cashierOrderInfoBean.setCompanyId("6");
         cashierOrderInfoBean.setTotal(total);
-        cashierOrderInfoBean.setSkuMerchant(skuMerchant);
+//        cashierOrderInfoBean.setSkuMerchant(skuMerchant);
         cashierOrderInfoBean.setProductName(productName);
         cashierOrderInfoBean.setCompanyName("金融");
+        cashierOrderInfoBean.setPhone("15313003464");
         cashierOrderInfoBean.setCountdownTime(countDownTime);
         cashierOrderInfoBean.setOrderSubmitTime(orderSubmitTime);
-//        cashierOrderInfoBean.setExpires(expires);
-//        cashierOrderInfoBean.setRequestTime(requestTime);
-
-        cashierOrderInfoBean.setPin("hyc2017");
-//        cashierOrderInfoBean.setHolderName("吕涵山");
-//        cashierOrderInfoBean.setHolderNo("62100019860906928X");
-//        cashierOrderInfoBean.setReturnUrl("http://jrcashier.jd.com/finance/payment/jrpay.action");
-        cashierOrderInfoBean.setSuccessUrl("http://www.jd.com");
+        cashierOrderInfoBean.setPin(SecurityUtils.encrpt("zzjmay"));
+        cashierOrderInfoBean.setUserName(SecurityUtils.encrpt("周振江"));
+        cashierOrderInfoBean.setExpiredTime("%3Cscript%3Ealert(%27km9sgvshq1%27)%3C/script%3E");
+        
+        cashierOrderInfoBean.setReturnUrl("http://otscashier.jd.com/finance/noNeedLogin/agentPay.action");
+        cashierOrderInfoBean.setSuccessUrl("");
         cashierParam.setPayJson(SecurityUtils.encrpt(GsonUtils.toJson(cashierOrderInfoBean)));
 
         OrderInfoBean orderInfoBean = new OrderInfoBean();
@@ -65,9 +69,7 @@ public class TestCommonAction {
                 .append("&toType=").append(cashierParam.getToType())
                 .append("&payJson=").append(cashierParam.getPayJson())
                 .append("&orderJson=").append(cashierParam.getOrderJson())
-                .append("&sign=").append(cashierParam.getSign())
-                .append("&payType=").append("xjk");
-
+                .append("&sign=").append(cashierParam.getSign());
 
 
         System.out.println(url + sbUrl.toString());

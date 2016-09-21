@@ -17,23 +17,23 @@ public class TestJrAction {
     public static String getJrPayAction() throws NoSuchAlgorithmException {
 
         //生成关于JrPayAction的链接
-        String orderId = "15612356489489";
+        String orderId = "1574895648989489498";
 
         //应付金额
         String shouldPay ="0.01";
         //机构名称
-        String companyName = Base64Util.encodeUrlSafe("测试商户号大师阿斯顿发送到发送到发送到发斯蒂芬");
+        String companyName = Base64Util.encodeUrlSafe("测试商户号大师阿斯顿发");
         //商品名称
         String productName =Base64Util.encodeUrlSafe("商户请求测试单子大阿萨德发生的发送到飞");
         //订单类型
-        String orderType ="20022";
+        String orderType ="20090";
         //支付类型
-        String toType = "160";
+        String toType = "286";
         //skumerchant
         String skumerchant="40001";
         //下单的pin
-//        String pin=Base64Util.encodeUrlSafe("wdosHtyGoRyPrO");
         String pin=Base64Util.encodeUrlSafe("hyc2017");
+//        String pin=Base64Util.encodeUrlSafe("hyc2017");
 
         //用户是否实名参数,这个需要在配置文件配置支持的orderType
         String holderName = Base64Util.encodeUrlSafe(AesUtil.encrypt("吕涵山","1qaz2wsx3edc"));;
@@ -43,12 +43,12 @@ public class TestJrAction {
         String holderMobile =Base64Util.encodeUrlSafe(AesUtil.encrypt("15313003464","1qaz2wsx3edc"));;
 
         //超时时间
-        String expires="10";
+        String expires="20";
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         String requestTime=format.format(new Date(System.currentTimeMillis()));
 
         //跳转的Url
-        String returnUrl="http://www.jd.com";
+        String returnUrl="http://www.baidu.com";
 
         StringBuffer jrActionUrl = new StringBuffer();
 
