@@ -27,7 +27,6 @@ public class TestApp {
         urlStr.append("http://h5pay.jd.com/code?")
                 .append("psk="+psk)
                 .append("&s=0");
-
         System.out.println(urlStr.toString());
 
 

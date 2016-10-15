@@ -16,8 +16,8 @@ import com.springapp.mvc.SecurityUtils;
 public class Test10013 {
     public static void main(String ss[]) {
         String orderId = "201511061739001";
-        String toType = "262";
-        String orderType = "10013";
+        String toType = "260";
+        String orderType = "30005";
         String total = "0.01";
         String skuMerchant = "55003";
         String productName = "京东";
@@ -42,7 +42,7 @@ public class Test10013 {
         cashierOrderInfoBean.setOrderSubmitTime(orderSubmitTime);
         cashierOrderInfoBean.setPin("vacume");
         cashierOrderInfoBean.setReturnUrl("http://otscashier.jd.com/finance/noNeedLogin/pay.action");
-        cashierOrderInfoBean.setSuccessUrl("");
+        cashierOrderInfoBean.setSuccessUrl("http://www.jd.com");
         cashierParam.setPayJson(SecurityUtils.encrpt(GsonUtils.toJson(cashierOrderInfoBean)));
 
         OrderInfoBean orderInfoBean = new OrderInfoBean();
